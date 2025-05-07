@@ -7,6 +7,8 @@ const roleRouter = require('./route/role.route.js');
 const {connect} = require('./framework/connection.js');
 const sync = require('./framework/sync.js');
 
+const authMiddleware = require('./middleware/auth.middleware.js');
+
 const database = async () => {
     await connect();
     await sync();
