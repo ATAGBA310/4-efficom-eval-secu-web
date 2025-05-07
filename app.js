@@ -18,10 +18,10 @@ database();
 
 app.use(express.json());
 
-app.use('/user',userRouter);
 app.use('/auth',authRouter);
-app.use('/message',messageRouter);
-app.use('/role',roleRouter);
+app.use('/user', authMiddleware, userRouter);
+app.use('/message', authMiddleware, messageRouter);
+app.use('/role', authMiddleware, roleRouter);
 
 
 module.exports = app;
